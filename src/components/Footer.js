@@ -1,5 +1,5 @@
-import React from 'react';
-import FilterLink from '../containers/FilterLink';
+import React from 'react'
+import FilterLink from '../containers/FilterLink'
 
 export default ({onClick}) => (
     <div>
@@ -9,4 +9,4 @@ export default ({onClick}) => (
         {' '}
         <FilterLink filter='SHOW_COMPLETED'>Completed</FilterLink>
     </div>
-);
+)

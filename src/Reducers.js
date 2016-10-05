@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
 
 const INITIAL_STATE = {
      visibilityFilter : 'SHOW_ALL',
@@ -8,10 +8,10 @@ const INITIAL_STATE = {
 export const visibilityFilter = (state = 'SHOW_ALL', action) => {
     switch (action.type) {
         case 'VISIBILITY_FILTER':
-            return action.payload.filter;
-            break;
+            return action.payload.filter
+            break
         default:
-            return state;
+            return state
     }
 }
 
@@ -26,19 +26,19 @@ export const todo = (state = [], action) => {
                     completed: false
                 }
             ]
-            break;
+            break
         case 'TOGGLE_TODO':
             return state.map((todo, index) => {
                 if (action.payload.index === index) {
                     return {
                         ...todo,
                         completed : !todo.completed
-                    };
+                    }
                 }
-                return todo;
-            });
+                return todo
+            })
         default:
-            return state;
+            return state
     }
 }
 
@@ -46,20 +46,20 @@ export const todo = (state = [], action) => {
 //      switch (action.type) {
 //           case 'VISIBILITY_FILTER':
 //                visibilityFilter: visibilityFilter(state, action)
-//                break;
+//                break
 //           case 'ADD_TODO':
 //           case 'TOGGLE_TODO':
 //                return {
 //                     ...state,
 //                     todos: (state.todos, action)
-//                };
+//                }
 //           default:
-//                return  state;
+//                return  state
 //      }
-// };
+// }
 
 export default combineReducers({
     visibilityFilter,
     todo
-});
+})
 
